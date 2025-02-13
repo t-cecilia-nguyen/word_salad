@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0362B02D5D9C45007E8C74 /* PAGKAKI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A0362AF2D5D9C45007E8C74 /* PAGKAKI-Regular.ttf */; };
 		4AA4227F2D5D855900D64EA3 /* word_saladApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA4227E2D5D855900D64EA3 /* word_saladApp.swift */; };
 		4AA422812D5D855900D64EA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA422802D5D855900D64EA3 /* ContentView.swift */; };
 		4AA422832D5D855A00D64EA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA422822D5D855A00D64EA3 /* Assets.xcassets */; };
@@ -16,7 +17,6 @@
 		4AA4229C2D5D855A00D64EA3 /* word_saladUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA4229B2D5D855A00D64EA3 /* word_saladUITestsLaunchTests.swift */; };
 		4AA422A92D5D85AD00D64EA3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA422A82D5D85AD00D64EA3 /* Colors.swift */; };
 		4AA422AB2D5D88F100D64EA3 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA422AA2D5D88F100D64EA3 /* SplashScreenView.swift */; };
-		4AA422AD2D5D8CD700D64EA3 /* Salad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA422AC2D5D8CD700D64EA3 /* Salad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A0362AF2D5D9C45007E8C74 /* PAGKAKI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PAGKAKI-Regular.ttf"; sourceTree = "<group>"; };
+		4A0362B12D5D9D60007E8C74 /* word-salad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "word-salad-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4AA4227B2D5D855900D64EA3 /* word_salad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = word_salad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA4227E2D5D855900D64EA3 /* word_saladApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = word_saladApp.swift; sourceTree = "<group>"; };
 		4AA422802D5D855900D64EA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,7 +51,6 @@
 		4AA4229B2D5D855A00D64EA3 /* word_saladUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = word_saladUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4AA422A82D5D85AD00D64EA3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4AA422AA2D5D88F100D64EA3 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		4AA422AC2D5D8CD700D64EA3 /* Salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Salad.png; path = ../../../../../Volumes/W5749684/COMP3097/Salad.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +101,13 @@
 		4AA4227D2D5D855900D64EA3 /* word_salad */ = {
 			isa = PBXGroup;
 			children = (
+				4A0362B12D5D9D60007E8C74 /* word-salad-Info.plist */,
 				4AA4227E2D5D855900D64EA3 /* word_saladApp.swift */,
 				4AA422A82D5D85AD00D64EA3 /* Colors.swift */,
 				4AA422AA2D5D88F100D64EA3 /* SplashScreenView.swift */,
 				4AA422802D5D855900D64EA3 /* ContentView.swift */,
+				4A0362AF2D5D9C45007E8C74 /* PAGKAKI-Regular.ttf */,
 				4AA422822D5D855A00D64EA3 /* Assets.xcassets */,
-				4AA422AC2D5D8CD700D64EA3 /* Salad.png */,
 				4AA422842D5D855A00D64EA3 /* Preview Content */,
 			);
 			path = word_salad;
@@ -240,9 +242,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AA422AD2D5D8CD700D64EA3 /* Salad.png in Resources */,
 				4AA422862D5D855A00D64EA3 /* Preview Assets.xcassets in Resources */,
 				4AA422832D5D855A00D64EA3 /* Assets.xcassets in Resources */,
+				4A0362B02D5D9C45007E8C74 /* PAGKAKI-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +438,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"word_salad/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "word-salad-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -464,6 +467,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"word_salad/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "word-salad-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
