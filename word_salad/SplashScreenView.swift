@@ -22,11 +22,16 @@ struct SplashScreenView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 300)
+                    Text("By:\nAdam Simcoe\nNhan Tran\nNhu Ly\nTrang Nguyen")
+                        .multilineTextAlignment(.center)
+                        .font(.custom("PAGKAKI-Regular", size: 20))
+                        .foregroundColor(Color.customBrown)
+                    
                 }
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                         withAnimation {
-                            isActive = true
+                            isActive = false
                         }
                     }
                 }
