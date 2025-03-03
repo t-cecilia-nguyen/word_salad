@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		105E9E412D71214200C81F44 /* GameScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E9E402D71214200C81F44 /* GameScreenView.swift */; };
 		10B2064F2D70CBCB00E3A8AF /* DifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B2064E2D70CBC200E3A8AF /* DifficultyView.swift */; };
 		10B206512D70CE7900E3A8AF /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B206502D70CE7800E3A8AF /* LeaderboardView.swift */; };
 		4A0362B02D5D9C45007E8C74 /* PAGKAKI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A0362AF2D5D9C45007E8C74 /* PAGKAKI-Regular.ttf */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		105E9E402D71214200C81F44 /* GameScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenView.swift; sourceTree = "<group>"; };
 		10B2064E2D70CBC200E3A8AF /* DifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyView.swift; sourceTree = "<group>"; };
 		10B206502D70CE7800E3A8AF /* LeaderboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		4A0362AF2D5D9C45007E8C74 /* PAGKAKI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PAGKAKI-Regular.ttf"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				4AA4227E2D5D855900D64EA3 /* word_saladApp.swift */,
 				4AA422A82D5D85AD00D64EA3 /* Colors.swift */,
 				4AA422AA2D5D88F100D64EA3 /* SplashScreenView.swift */,
+				105E9E402D71214200C81F44 /* GameScreenView.swift */,
 				4AA422802D5D855900D64EA3 /* ContentView.swift */,
 				4A0362AF2D5D9C45007E8C74 /* PAGKAKI-Regular.ttf */,
 				4AA422822D5D855A00D64EA3 /* Assets.xcassets */,
@@ -279,6 +282,7 @@
 				4AA422812D5D855900D64EA3 /* ContentView.swift in Sources */,
 				4AA422A92D5D85AD00D64EA3 /* Colors.swift in Sources */,
 				4AA4227F2D5D855900D64EA3 /* word_saladApp.swift in Sources */,
+				105E9E412D71214200C81F44 /* GameScreenView.swift in Sources */,
 				10B206512D70CE7900E3A8AF /* LeaderboardView.swift in Sources */,
 				4AA422AB2D5D88F100D64EA3 /* SplashScreenView.swift in Sources */,
 			);
