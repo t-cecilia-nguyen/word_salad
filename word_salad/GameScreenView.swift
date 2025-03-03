@@ -62,7 +62,7 @@ struct GameScreenView: View {
                     .cornerRadius(40)
                     .font(.custom("PAGKAKI-Regular", size: 25))
                     .frame(width: 250)
-                    .padding(.bottom, 15)
+                    .padding(.bottom, 20)
 
                 Button(action: {
                     print("---- Pressed Submit Button ----")
@@ -71,6 +71,7 @@ struct GameScreenView: View {
                     Text("Submit")
                         .font(.custom("PAGKAKI-Regular", size: 25))
                         .padding(.horizontal, 40)
+                        .padding(.top, 10)
                         .foregroundColor(Color.customBrown)
                         .background(Color.customGreen)
                         .cornerRadius(40)
