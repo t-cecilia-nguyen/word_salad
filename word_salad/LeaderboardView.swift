@@ -81,6 +81,7 @@ struct LeaderboardView: View {
                         .cornerRadius(8)
                         .padding(.vertical, 5)
                         
+                        
                     }
                     .listStyle(PlainListStyle())
                 }

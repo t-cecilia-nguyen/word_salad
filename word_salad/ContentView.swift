@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var name: String = ""
     @State private var isGameStarted: Bool = false
+    @State private var isLeaderboardOpened: Bool = false
     var body: some View {
         NavigationStack {
             ZStack {
@@ -49,6 +50,7 @@ struct ContentView: View {
                     
                     Button(action: {
                         print("Leaderboard Button")
+                        isLeaderboardOpened = true
                     }) {
                         Text("Leaderboard")
                             .font(.custom("PAGKAKI-Regular", size: 30))
@@ -57,6 +59,9 @@ struct ContentView: View {
                             .foregroundColor(Color.customBrown)
                             .background(Color.customOrange)
                             .cornerRadius(40)
+                    }
+                    .navigationDestination(isPresented: $isLeaderboardOpened) {
+                        LeaderboardView()
                     }
                 }
                 .padding()
