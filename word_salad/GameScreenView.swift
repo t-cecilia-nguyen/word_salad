@@ -14,6 +14,7 @@ struct GameScreenView: View {
     @State private var timeRemaining: Int = 120
     @State private var timer: Timer?
     @Binding var selectedLevel: Int
+    @State private var navigateToGameOver = false
     
     private var wordLength: Int {
             switch selectedLevel {
@@ -85,7 +86,12 @@ struct GameScreenView: View {
                     .padding(.bottom, 20)
                     .foregroundColor(Color.customBrown)
             }
-        }.onAppear(perform: startGame)
+        }
+        .onAppear(perform: startGame)
+        // Game Over Navigation
+        .navigationDestination(isPresented: $navigateToGameOver) {
+            GameOverView(finalScore: score, difficultyLevel: selectedLevel)
+        }
     }
     
     private func startGame() {
@@ -110,7 +116,7 @@ struct GameScreenView: View {
 
     private func startTimer() {
         timer?.invalidate() // Invalidate any existing timer
-        timeRemaining = 120 
+        timeRemaining = 120
 
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             if timeRemaining > 0 {
@@ -118,6 +124,8 @@ struct GameScreenView: View {
             } else {
                 timer?.invalidate()
                 print("time's up")
+                // Game Over navigation bool
+                navigateToGameOver = true
             }
         }
     }
