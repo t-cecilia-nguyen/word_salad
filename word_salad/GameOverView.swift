@@ -13,6 +13,8 @@ struct GameOverView: View {
     var difficultyLevel: Int
     @State private var isGameStarted: Bool = false
     @State private var isLeaderboardOpened: Bool = false
+    @AppStorage("playerName") var playerName: String = ""
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         
@@ -77,6 +79,9 @@ struct GameOverView: View {
                 }
                 .padding()
             }
+        }
+        .onAppear {
+            LeaderboardManager.shared.saveScore(name: playerName, score: finalScore, difficulty: difficultyLevel)
         }
     }
 }

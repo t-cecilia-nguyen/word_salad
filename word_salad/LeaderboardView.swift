@@ -16,14 +16,8 @@ struct Player: Identifiable {
 }
 
 struct LeaderboardView: View {
-    // seed data for leaderboard
-    let samplePlayers = [
-        Player(name: "Alice", score: 120, difficulty: 1),
-        Player(name: "Bob", score: 100, difficulty: 2),
-        Player(name: "Charlie", score: 90, difficulty: 3),
-        Player(name: "Dave", score: 80, difficulty: 4),
-        Player(name: "Eve", score: 70, difficulty: 5)
-    ]
+    let players: [LeaderboardEntry] = LeaderboardManager.shared.loadScores()
+    @State private var showClearAlert = false
     
     var body: some View {
         ZStack {
@@ -31,16 +25,27 @@ struct LeaderboardView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Text("Leaderboard")
-                    .font(.custom("PAGKAKI-Regular", size: 30))
-                    .foregroundColor(Color.customBrown)
+                Button(action: {
+                    showClearAlert = true
+                }) {
+                    Text("Leaderboard")
+                        .font(.custom("PAGKAKI-Regular", size: 30))
+                        .foregroundColor(Color.customBrown)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .alert("Clear leaderboard?", isPresented: $showClearAlert) {
+                    Button("Clear", role: .destructive) {
+                        LeaderboardManager.shared.clearScores()
+                    }
+                    Button("Cancel", role: .cancel) { }
+                }
                                 
                 VStack(alignment: .leading) {
                     HStack {
                         Text("Name")
                             .font(.custom("PAGKAKI-Regular", size: 20))
                             .fontWeight(.bold)
-                            .foregroundColor(Color.customBrown)  
+                            .foregroundColor(Color.customBrown)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         Text("Score")
@@ -61,9 +66,7 @@ struct LeaderboardView: View {
                     .cornerRadius(10)
                     .shadow(radius: 5)
 
-                    
-                    
-                    List(samplePlayers.sorted { $0.score > $1.score }) { player in
+                    List(players.sorted { $0.score > $1.score }) { player in
                         HStack {
                             Text(player.name)
                                 .font(.custom("PAGKAKI-Regular", size: 18))
@@ -71,7 +74,7 @@ struct LeaderboardView: View {
                             Text("\(player.score)")
                                 .font(.custom("PAGKAKI-Regular", size: 18))
                                 .frame(maxWidth: .infinity, alignment: .center)
-                            Text("\(player.difficulty)")  
+                            Text("\(player.difficulty)")
                                 .font(.custom("PAGKAKI-Regular", size: 18))
                                 .frame(maxWidth: .infinity, alignment: .trailing)
                         }
@@ -80,8 +83,6 @@ struct LeaderboardView: View {
                         .background(Color.customYellow)
                         .cornerRadius(8)
                         .padding(.vertical, 5)
-                        
-                        
                     }
                     .listStyle(PlainListStyle())
                 }
@@ -90,6 +91,7 @@ struct LeaderboardView: View {
         }
     }
 }
+
 
 #Preview {
     LeaderboardView()

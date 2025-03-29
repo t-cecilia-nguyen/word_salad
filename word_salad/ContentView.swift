@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var name: String = ""
     @State private var isGameStarted: Bool = false
     @State private var isLeaderboardOpened: Bool = false
+    @AppStorage("playerName") var name: String = ""
     var body: some View {
         NavigationStack {
             ZStack {
