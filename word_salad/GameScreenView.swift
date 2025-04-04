@@ -3,7 +3,9 @@
 //  word_salad
 //
 //  Created by Nhu Ly on 2025-02-28.
-//
+//  StudentId: 101429112
+//  Edited by Nhu Ly on 2025-04-04
+
 import SwiftUI
 
 struct GameScreenView: View {
@@ -56,7 +58,9 @@ struct GameScreenView: View {
                     .padding(.bottom, 10)
                     .foregroundColor(Color.customBrown)
                 
-                TextField("", text: $guess)
+                TextField("", text: $guess, onEditingChanged: { _ in
+                    validateInput(guess)
+                })
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .multilineTextAlignment(.center)
                     .background(Color.white)
@@ -64,7 +68,11 @@ struct GameScreenView: View {
                     .font(.custom("PAGKAKI-Regular", size: 25))
                     .frame(width: 250)
                     .padding(.bottom, 20)
-
+                    /// add check when the user presses "Return" on the keyboard
+                    .onSubmit {
+                        checkGuess()
+                    }
+                
                 Button(action: {
                     print("---- Pressed Submit Button ----")
                     checkGuess()
@@ -114,18 +122,22 @@ struct GameScreenView: View {
         }.resume()
     }
 
+    
+    /// Fix startTime func that may cause NaN error
+    
     private func startTimer() {
         timer?.invalidate() // Invalidate any existing timer
         timeRemaining = 120
 
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            if timeRemaining > 0 {
-                timeRemaining -= 1
-            } else {
-                timer?.invalidate()
-                print("time's up")
-                // Game Over navigation bool
-                navigateToGameOver = true
+            DispatchQueue.main.async {
+                if timeRemaining > 0 {
+                    timeRemaining -= 1
+                } else {
+                    timer?.invalidate()
+                    // Game Over navigation bool
+                    navigateToGameOver = true
+                }
             }
         }
     }
@@ -148,7 +160,14 @@ struct GameScreenView: View {
         return "\(minutes):\(String(format: "%02d", seconds))"
     }
 
-   
+   /// add validateInput method to accept only alphabetical chars
+    private func validateInput(_ input: String) {
+        let allowedCharacters = CharacterSet.letters
+        if input.rangeOfCharacter(from: allowedCharacters.inverted) != nil {
+            guess = String(input.filter { $0.isLetter })  // Remove invalid characters
+        }
+    }
+
 }
 
 #Preview {
