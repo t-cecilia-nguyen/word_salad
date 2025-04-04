@@ -100,7 +100,7 @@ struct GameScreenView: View {
    }
 
     private func fetchRandomWord() {
-        let apiURL = "https://random-word-api.herokuapp.com/word?length=\(wordLength)"
+        let apiURL = "https://random-word-api.vercel.app/api?words=1&length=\(wordLength)"
 
         guard let url = URL(string: apiURL) else { return }
 
