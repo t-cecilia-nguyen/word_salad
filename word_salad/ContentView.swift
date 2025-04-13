@@ -26,7 +26,7 @@ struct ContentView: View {
                     Text("Please enter your name:")
                         .font(.system(size: 20))
                     
-                    TextField("UPPERlowerTest", text: $name)
+                    TextField("", text: $name)
                         .padding(.top, 10)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .multilineTextAlignment(.center)
