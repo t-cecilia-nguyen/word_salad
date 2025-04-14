@@ -3,7 +3,7 @@
 //  word_salad
 //
 //  Created by Adam Simcoe on 2025-03-18.
-//
+//  Student ID - 101442161
 
 import SwiftUI
 
@@ -86,7 +86,6 @@ struct GameOverView: View {
     }
 }
 
-// Update when DB implemented
 #Preview {
     GameOverView(finalScore: 120, difficultyLevel: 3)
 }
